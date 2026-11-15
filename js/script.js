@@ -3,13 +3,10 @@
 
 console.log("Shipyard Website Loaded!");
 
-
 /* =================================
    ELEGANT SCROLL REVEAL
 ================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
-
     const revealElements = document.querySelectorAll(`
         .about > *,
         .comparison-header,
@@ -32,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .roadmap-heading,
         .roadmap-card
     `);
-
     revealElements.forEach((element, index) => {
         element.classList.add("reveal");
 
@@ -86,4 +82,75 @@ document.addEventListener("DOMContentLoaded", () => {
             button.setAttribute("aria-expanded", "false");
         });
     });
+});
+
+
+/* =================================
+   NAVBAR DROPDOWN
+================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".nav-dropdown");
+    const toggle = document.querySelector(".dropdown-toggle");
+
+    if (!dropdown || !toggle) return;
+
+    // Buka dan tutup dropdown
+    toggle.addEventListener("click", () => {
+        const isOpen = dropdown.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Tutup jika klik di luar dropdown
+    document.addEventListener("click", (event) => {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    // Tutup dengan tombol Escape
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            dropdown.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    // Tutup setelah memilih menu
+    dropdown.querySelectorAll(".dropdown-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            dropdown.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+        });
+    });
+});
+
+// IMAGE LIGHTBOX
+const lightbox = document.getElementById("imageLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("lightboxClose");
+
+document.querySelectorAll(".zoomable-image").forEach(image => {
+    image.addEventListener("click", function () {
+        lightboxImage.src = this.src;
+        lightboxImage.alt = this.alt;
+        lightbox.classList.add("active");
+    });
+});
+
+closeLightbox.addEventListener("click", function () {
+    lightbox.classList.remove("active");
+});
+
+lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+    }
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        lightbox.classList.remove("active");
+    }
 });
