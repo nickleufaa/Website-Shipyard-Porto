@@ -308,27 +308,38 @@ p {
 
 }
 
-/* PROFILE SECTION */
+
+/* =========================================
+   PROFILE SECTION - SHIPYARD
+========================================= */
 
 .profile {
     width: 100%;
     padding: 110px 10%;
     background: #FFFFFF;
     color: #10273A;
-
     display: block;
     text-align: left;
 }
 
+/* PROFILE HEADER */
+
 .profile-header {
     width: 100%;
-    max-width: 700px;
-    margin-bottom: 55px;
+    max-width: 850px;
+    margin-bottom: 60px;
+}
+
+.profile-header .section-label {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
 }
 
 .profile-header h2 {
-    font-size: clamp(35px, 5vw, 58px);
+    font-size: clamp(38px, 5vw, 60px);
     line-height: 1.2;
+    font-weight: 700;
 }
 
 .profile-header h2 span {
@@ -337,54 +348,70 @@ p {
 }
 
 .profile-description {
-    margin-top: 25px;
-    color: #667788;
-    line-height: 1.8;
+    max-width: 850px;
+    margin-top: 28px;
+    color: #40566A;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.85;
+    letter-spacing: 0;
 }
 
-/* STATISTICS */
+/* COMPANY STATISTICS */
 
 .profile-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
-
-    margin-bottom: 80px;
-
+    margin-bottom: 85px;
     border-top: 1px solid #CCD3D9;
     border-bottom: 1px solid #CCD3D9;
 }
 
 .stat-item {
-    padding: 30px 20px;
+    padding: 32px 22px;
     border-right: 1px solid #CCD3D9;
     text-align: left;
 }
 
 .stat-item h3 {
     color: #A17B3D;
-    font-size: 38px;
-    margin-bottom: 10px;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .stat-item p {
-    color: #667788;
-    font-size: 13px;
+    color: #40566A;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .stat-item:last-child {
     border-right: none;
 }
 
-/* LOCATION */
+/* LOCATION HEADER */
 
 .location-header {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+}
+
+.location-header .section-label {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
 }
 
 .location-header h3 {
-    font-size: 30px;
+    color: #10273A;
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.35;
 }
+
+/* LOCATION GRID */
 
 .location-grid {
     display: grid;
@@ -395,8 +422,8 @@ p {
 
 .location-card {
     background: #FFFFFF;
-    padding: 35px;
-    border: 1px solid #E0E5E9;
+    padding: 38px;
+    border: 1px solid #D5DEE5;
     text-align: left;
     transition: 0.3s ease;
 }
@@ -407,47 +434,112 @@ p {
 }
 
 .location-card h3 {
-    font-size: 25px;
+    color: #10273A;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.35;
     margin-bottom: 8px;
 }
 
 .location-area {
-    color: #82909D;
-    margin-bottom: 25px;
+    color: #536B7E;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 28px;
 }
+
+/* LOCATION SPECIFICATIONS */
 
 .location-details {
     display: grid;
-    gap: 18px;
-    padding: 22px 0;
-    border-top: 1px solid #E0E5E9;
-    border-bottom: 1px solid #E0E5E9;
+    gap: 20px;
+    padding: 25px 0;
+    border-top: 1px solid #D5DEE5;
+    border-bottom: 1px solid #D5DEE5;
 }
 
 .location-details div {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
+    align-items: center;
+    gap: 15px;
 }
 
 .location-details span {
-    color: #82909D;
-    font-size: 10px;
-    letter-spacing: 1px;
+    color: #536B7E;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .location-details strong {
     color: #10273A;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
 }
+
+/* LOCATION DESCRIPTION */
 
 .location-function {
-    margin-top: 20px;
-    color: #667788;
-    font-size: 13px;
-    line-height: 1.8;
+    margin-top: 24px;
+    color: #40566A;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.85;
 }
 
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile {
+        padding: 75px 7%;
+    }
+
+    .profile-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+        padding: 25px 15px;
+        border-bottom: 1px solid #CCD3D9;
+    }
+
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .stat-item h3 {
+        font-size: 34px;
+    }
+
+    .location-card {
+        padding: 26px;
+    }
+
+    .location-details div {
+        align-items: flex-start;
+    }
+
+    .location-details span {
+        font-size: 12px;
+    }
+
+    .location-details strong {
+        font-size: 14px;
+    }
+}
 
 /* =================================
    SWOT SECTION
@@ -2111,8 +2203,9 @@ html {
 
 }
 
+
 /* =========================================
-   ROYALE SHIPYARD - ABOUT / INTRODUCTION
+   DUMAS SHIPYARD - ABOUT / INTRODUCTION
 ========================================= */
 
 .about {
@@ -2126,23 +2219,24 @@ html {
 /* SECTION HEADER */
 
 .about-header {
-    max-width: 850px;
+    max-width: 950px;
     margin-bottom: 75px;
 }
 
 .about-header .section-label {
     color: #B88D43;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 600;
     letter-spacing: 3px;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 
 .about-header h2 {
     color: #10273A;
-    font-size: clamp(34px, 4.5vw, 54px);
+    font-size: clamp(38px, 4.5vw, 58px);
     line-height: 1.2;
     letter-spacing: -1.2px;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 .about-header h2 span {
@@ -2151,10 +2245,10 @@ html {
 }
 
 .about-header .about-description {
-    max-width: 680px;
-    color: #647687;
-    font-size: 16px;
-    line-height: 1.9;
+    max-width: 850px;
+    color: #536B7E;
+    font-size: 18px;
+    line-height: 1.8;
     letter-spacing: 0;
 }
 
@@ -2162,57 +2256,59 @@ html {
 /* PROJECT BACKGROUND */
 
 .about-background {
-    padding: 30px 35px 40px;
+    padding: 38px 40px 45px;
     background: #10273A;
     color: #FFFFFF;
-    margin-bottom: 85px;
+    margin-bottom: 90px;
 }
 
 .about-background-label {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 24px;
     border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .about-background-label span {
     color: #C6A15B;
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: 600;
     letter-spacing: 2px;
 }
 
 .about-background-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 65px;
-    padding-top: 40px;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    padding-top: 45px;
 }
 
 .about-background-title > p {
     color: #C6A15B;
-    font-size: 11px;
+    font-size: 13px;
+    font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .about-background-title h3 {
-    max-width: 440px;
+    max-width: 500px;
     color: #FFFFFF;
-    font-size: clamp(25px, 3vw, 36px);
-    line-height: 1.35;
+    font-size: clamp(30px, 3vw, 39px);
+    line-height: 1.3;
 }
 
 .about-background-text {
-    padding-top: 28px;
+    padding-top: 25px;
 }
 
 .about-background-text p {
-    color: #B8C7D3;
-    font-size: 14px;
+    color: #D0DBE4;
+    font-size: 17px;
     line-height: 1.9;
     letter-spacing: 0;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
 
@@ -2223,27 +2319,147 @@ html {
     justify-content: space-between;
     align-items: flex-end;
     gap: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .about-focus-header > div > p {
     color: #B88D43;
-    font-size: 11px;
+    font-size: 15px !important;
+    font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .about-focus-header h3 {
     color: #10273A;
-    font-size: clamp(25px, 3vw, 34px);
+    font-size: 40px !important;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .about-focus-header > span {
-    color: #82909D;
-    font-size: 10px;
+    color: #647687;
+    font-size: 12px;
     letter-spacing: 1.5px;
 }
 
+
+/* DEVELOPMENT FOCUS CARDS */
+
+.about-focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.about-focus-card {
+    padding: 32px 28px;
+    background: #FFFFFF;
+    border: 1px solid #D7E0E7;
+    min-height: 300px;
+}
+
+.about-focus-card .focus-number {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.about-focus-card .focus-icon {
+    margin-bottom: 25px;
+}
+
+.about-focus-card h4 {
+    color: #10273A;
+    font-size: 25px !important;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.about-focus-card p {
+    color: #647687;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* DEVELOPMENT VISION */
+
+.about-closing {
+    margin-top: 75px;
+}
+
+.about-closing > span {
+    color: #B88D43;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.about-closing p {
+    max-width: 1050px;
+    margin-top: 20px;
+    color: #10273A;
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+    .about-background-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .about-focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 75px 7%;
+    }
+
+    .about-header {
+        margin-bottom: 45px;
+    }
+
+    .about-background {
+        padding: 28px 24px;
+        margin-bottom: 60px;
+    }
+
+    .about-background-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-top: 30px;
+    }
+
+    .about-background-text {
+        padding-top: 0;
+    }
+
+    .about-focus-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .about-focus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-focus-card {
+        min-height: auto;
+    }
+
+    .about-closing {
+        margin-top: 50px;
+    }
+}
 
 /* DEVELOPMENT FOCUS CARDS */
 
@@ -2305,8 +2521,9 @@ html {
 }
 
 .about-focus-card p {
-    color: #718090;
-    font-size: 13px;
+    color: #40566A !important;
+    font-size: 20px !important;
+    font-weight: 500;
     line-height: 1.8;
     letter-spacing: 0;
 }
@@ -2918,4 +3135,1111 @@ section.comparison#project .comparison-description {
     font-size: 14px !important;
     letter-spacing: 3px;
     font-weight: 600;
+}
+
+/* ===== SWOT TEXT IMPROVEMENT ===== */
+
+.swot-card {
+  padding: 38px 42px;
+}
+
+/* Judul Strengths, Weaknesses, Opportunities, Threats */
+.swot-card h3 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+/* Huruf S, W, O, T */
+.swot-letter {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+/* Isi SWOT */
+.swot-card ul {
+  padding-left: 24px;
+  margin-top: 26px;
+}
+
+.swot-card li {
+  font-size: 18px;
+  line-height: 1.85;
+  font-weight: 400;
+  color: #dce7ef;
+  margin-bottom: 16px;
+  letter-spacing: 0.1px;
+}
+
+/* Warna bullet */
+.swot-card li::marker {
+  color: #8ca9bd;
+}
+
+/* Responsive untuk tablet dan HP */
+@media (max-width: 768px) {
+  .swot-card {
+    padding: 26px 24px;
+  }
+
+  .swot-card h3 {
+    font-size: 22px;
+  }
+
+  .swot-letter {
+    font-size: 40px;
+  }
+
+  .swot-card li {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+/* =========================================
+   PRODUCTION FLOW - INTEGRATED SECTION
+========================================= */
+
+.production-flow-section {
+    width: 100%;
+    margin-top: 65px;
+    padding-top: 45px;
+    border-top: 1px solid rgba(16, 39, 58, 0.18);
+    background: transparent;
+}
+
+.production-flow-section .engineering-header {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.production-flow-section .engineering-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.production-flow-section .engineering-card {
+    width: 100%;
+    max-width: 100%;
+}
+
+.production-flow-section .engineering-header h2 {
+    max-width: 700px;
+}
+
+.production-flow-section .engineering-description {
+    max-width: 750px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .production-flow-section {
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+}
+
+/* =========================
+   SECTION 09 - CONCLUSION
+========================= */
+
+.conclusion {
+    padding: 120px 10%;
+    background: #e7eef3;
+    color: #102b40;
+}
+
+.conclusion-header {
+    max-width: 780px;
+    margin-bottom: 65px;
+}
+
+.conclusion-header .section-label {
+    color: #b58a43;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.conclusion-header h2 {
+    font-size: clamp(36px, 4.5vw, 58px);
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.conclusion-header h2 span {
+    color: #b58a43;
+}
+
+.conclusion-description {
+    max-width: 700px;
+    color: #647b8e;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.conclusion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.conclusion-item {
+    background: #f7f9fb;
+    border: 1px solid #d6e0e8;
+    padding: 35px;
+    min-height: 230px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.conclusion-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(16, 43, 64, 0.08);
+}
+
+.conclusion-item > span {
+    display: block;
+    color: #b58a43;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.conclusion-item h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+    color: #102b40;
+}
+
+.conclusion-item p {
+    color: #647b8e;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.conclusion-closing {
+    margin-top: 65px;
+    padding: 55px 40px;
+    background: #102b40;
+    text-align: center;
+}
+
+.conclusion-closing > p {
+    color: #c69a50;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.conclusion-closing h3 {
+    color: #ffffff;
+    font-size: clamp(25px, 3vw, 38px);
+    line-height: 1.4;
+}
+
+.conclusion-closing h3 span {
+    color: #c69a50;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .conclusion {
+        padding: 85px 7%;
+    }
+
+    .conclusion-header {
+        margin-bottom: 40px;
+    }
+
+    .conclusion-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .conclusion-item {
+        padding: 28px;
+        min-height: auto;
+    }
+
+    .conclusion-closing {
+        margin-top: 40px;
+        padding: 40px 22px;
+    }
+}
+
+/* =========================
+   PDF DOWNLOAD BUTTON
+========================= */
+
+.pdf-download-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 40px auto;
+    padding: 15px 24px;
+    background: #102b40;
+    color: #ffffff;
+    border: 1px solid #c69a50;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
+}
+
+.pdf-download-btn:hover {
+    background: #c69a50;
+    color: #102b40;
+    transform: translateY(-3px);
+}
+
+.pdf-download-btn:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.pdf-download-btn span {
+    font-size: 19px;
+}
+
+@media (max-width: 768px) {
+    .pdf-download-btn {
+        right: 15px;
+        bottom: 15px;
+        padding: 13px 16px;
+        font-size: 11px;
+    }
+}
+
+/* PDF EXPORT MODE */
+
+.pdf-exporting {
+    background: #ffffff !important;
+}
+
+.pdf-exporting section {
+    break-inside: auto;
+}
+
+.pdf-exporting .roadmap-card,
+.pdf-exporting .conclusion-item,
+.pdf-exporting .investment-summary-item,
+.pdf-exporting .priority-item {
+    break-inside: avoid;
+}
+
+.pdf-exporting img {
+    max-width: 100%;
+}
+
+/* =========================
+   MASTERPLAN VISUAL
+========================= */
+
+.masterplan-visual {
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+    overflow: hidden;
+    background: #102b40;
+    border: 1px solid rgba(198, 154, 80, 0.35);
+}
+
+.masterplan-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+}
+
+.masterplan-visual:hover img {
+    transform: scale(1.015);
+}
+
+.masterplan-image-label {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 9px 14px;
+    background: rgba(16, 43, 64, 0.88);
+    color: #d5aa62;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 1px solid rgba(198, 154, 80, 0.4);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .masterplan-image-label {
+        top: 10px;
+        left: 10px;
+        font-size: 8px;
+        padding: 7px 10px;
+    }
+}
+
+/* =========================================
+   PRODUCTION FLOW - FULL WIDTH REDESIGN
+========================================= */
+
+#production-flow .engineering-header {
+    max-width: 850px;
+    margin-bottom: 55px;
+}
+
+#production-flow .engineering-description {
+    max-width: 780px;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* MAIN PANEL */
+
+#production-flow .production-panel {
+    width: 100%;
+    padding: 42px;
+    background: #10273A;
+    color: #FFFFFF;
+    border: 1px solid #243F54;
+}
+
+/* PANEL HEADER */
+
+#production-flow .production-panel-header {
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+#production-flow .production-number {
+    color: #C6A15B;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+#production-flow .production-panel-header h3 {
+    margin-top: 14px;
+    color: #FFFFFF;
+    font-size: 30px;
+}
+
+#production-flow .production-panel-header p {
+    margin-top: 8px;
+    color: #C6A15B;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* SECTION LABEL */
+
+#production-flow .production-section-label {
+    margin-bottom: 18px;
+    color: #C6A15B;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* PRODUCTION STAGES */
+
+#production-flow .production-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 38px;
+}
+
+#production-flow .production-stage {
+    min-height: 115px;
+    padding: 22px;
+    background: #1B384F;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: 0.3s ease;
+}
+
+#production-flow .production-stage:hover {
+    border-color: #C6A15B;
+    transform: translateY(-4px);
+}
+
+#production-flow .production-stage span {
+    display: block;
+    margin-bottom: 15px;
+    color: #C6A15B;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#production-flow .production-stage h4 {
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+/* OPERATIONAL ANALYSIS */
+
+#production-flow .production-analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+}
+
+#production-flow .production-analysis-item span {
+    display: block;
+    margin-bottom: 14px;
+    color: #C6A15B;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+#production-flow .production-analysis-item p {
+    color: #D0DBE4;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    #production-flow .production-panel {
+        padding: 25px;
+    }
+
+    #production-flow .production-flow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #production-flow .production-analysis-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #production-flow .production-flow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #production-flow .production-stage {
+        min-height: auto;
+    }
+
+}
+
+/* =========================================
+   PRODUCTION FLOW - PRESENTATION READABILITY
+========================================= */
+
+/* Label section */
+#production-flow .section-label {
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+/* Judul dan deskripsi utama */
+#production-flow .engineering-header h2 {
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.2;
+}
+
+#production-flow .engineering-description {
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+/* Judul panel */
+#production-flow .production-number {
+    font-size: 15px;
+}
+
+#production-flow .production-panel-header h3 {
+    font-size: 36px;
+}
+
+#production-flow .production-panel-header p {
+    font-size: 15px;
+}
+
+/* Label tahapan produksi */
+#production-flow .production-section-label {
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+/* Kartu tahapan */
+#production-flow .production-stage {
+    min-height: 135px;
+    padding: 25px;
+}
+
+#production-flow .production-stage span {
+    font-size: 17px;
+    margin-bottom: 17px;
+}
+
+#production-flow .production-stage h4 {
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+/* Implikasi dan aspek evaluasi */
+#production-flow .production-analysis-item span {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+#production-flow .production-analysis-item p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #production-flow .engineering-description {
+        font-size: 17px;
+    }
+
+    #production-flow .production-panel-header h3 {
+        font-size: 30px;
+    }
+
+    #production-flow .production-stage h4 {
+        font-size: 18px;
+    }
+
+    #production-flow .production-analysis-item p {
+        font-size: 16px;
+    }
+}
+
+/* =========================================
+   MASTERPLAN - TYPOGRAPHY REFINEMENT
+========================================= */
+
+/* MASTERPLAN HEADER */
+
+#masterplan .masterplan-header {
+    max-width: 950px;
+    margin-bottom: 65px;
+}
+
+#masterplan .masterplan-header .section-label {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    line-height: 1.6;
+}
+
+#masterplan .masterplan-header h2 {
+    font-size: clamp(40px, 4.5vw, 58px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+#masterplan .masterplan-description {
+    max-width: 850px;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.1px;
+}
+
+/* SUBSECTION HEADINGS */
+
+#masterplan .masterplan-subheader {
+    margin-bottom: 25px;
+}
+
+#masterplan .masterplan-subheader > span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+#masterplan .masterplan-subheader h3 {
+    margin-bottom: 12px;
+    font-size: 27px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+#masterplan .masterplan-subheader p {
+    max-width: 1100px;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.1px;
+}
+
+/* EXISTING LAYOUT CAPTIONS */
+
+#masterplan .layout-caption {
+    padding: 25px;
+}
+
+#masterplan .layout-caption span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+#masterplan .layout-caption h4 {
+    margin: 10px 0;
+    font-size: 23px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+#masterplan .layout-caption p {
+    font-size: 17px;
+    line-height: 1.8;
+    letter-spacing: 0.1px;
+}
+
+/* 2D AND 3D PLACEHOLDER LABELS */
+
+#masterplan .placeholder-content > span {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+#masterplan .placeholder-content h3 {
+    font-size: clamp(30px, 3.5vw, 42px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+#masterplan .placeholder-content p {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    #masterplan .masterplan-header h2 {
+        font-size: 36px;
+    }
+
+    #masterplan .masterplan-description,
+    #masterplan .masterplan-subheader p {
+        font-size: 16px;
+    }
+
+    #masterplan .masterplan-subheader h3 {
+        font-size: 23px;
+    }
+
+    #masterplan .layout-caption h4 {
+        font-size: 21px;
+    }
+
+    #masterplan .layout-caption p {
+        font-size: 16px;
+    }
+
+    #masterplan .placeholder-content p {
+        font-size: 16px;
+    }
+}
+
+/* =========================================
+   ENGINEERING ANALYSIS - TYPOGRAPHY
+========================================= */
+
+/* GRID TIGA KARTU */
+
+#engineering .engineering-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+#engineering .engineering-card {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NOMOR DAN JUDUL KARTU */
+
+#engineering .engineering-number {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+#engineering .engineering-card h3 {
+    font-size: 25px;
+    line-height: 1.35;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+/* KATEGORI KARTU */
+
+#engineering .engineering-category {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    line-height: 1.6;
+}
+
+/* LABEL TEMUAN DAN DAMPAK */
+
+#engineering .engineering-detail > span {
+    display: block;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+}
+
+/* ISI PARAGRAF */
+
+#engineering .engineering-detail p {
+    color: #526B80;
+    font-size: 17px;
+    line-height: 1.8;
+    letter-spacing: 0;
+    margin-bottom: 15px;
+}
+
+/* ENGINEERING NOTE */
+
+#engineering .engineering-note {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    #engineering .engineering-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    #engineering .engineering-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #engineering .engineering-card {
+        padding: 25px;
+    }
+}
+/* KHUSUS IDENTIFIKASI MASALAH */
+#engineering .engineering-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+#engineering .engineering-card {
+    width: 100%;
+    padding: 30px;
+}
+
+#engineering .engineering-detail > span {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+#engineering .engineering-detail p {
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0;
+}
+
+@media (max-width: 1000px) {
+    #engineering .engineering-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    #engineering .engineering-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   ROADMAP - TYPOGRAPHY IMPROVEMENT
+========================================= */
+
+/* HEADER */
+
+#roadmap .roadmap-header .section-label {
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+}
+
+#roadmap .roadmap-header h2 {
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.2;
+}
+
+#roadmap .roadmap-description {
+    max-width: 850px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #526B80;
+}
+
+/* INVESTMENT SUMMARY */
+
+#roadmap .investment-summary-item {
+    padding: 32px 28px;
+}
+
+#roadmap .investment-summary-item span {
+    display: block;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 1.2px;
+    margin-bottom: 15px;
+}
+
+#roadmap .investment-summary-item h3 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+#roadmap .investment-summary-item p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* SECTION HEADING */
+
+#roadmap .roadmap-heading > span {
+    font-size: 14px;
+    letter-spacing: 1.8px;
+}
+
+#roadmap .roadmap-heading h3 {
+    font-size: 29px;
+    line-height: 1.4;
+    margin-top: 12px;
+}
+
+/* CAPEX BREAKDOWN */
+
+#roadmap .investment-row {
+    padding: 19px 22px;
+    gap: 20px;
+}
+
+#roadmap .investment-row span {
+    font-size: 15px;
+}
+
+#roadmap .investment-row p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+#roadmap .investment-row strong {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+#roadmap .investment-table-header span {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+#roadmap .investment-total p,
+#roadmap .investment-total strong {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* OPEX AND ESTIMATION NOTES */
+
+#roadmap .opex-note {
+    padding: 25px;
+    margin-top: 18px;
+}
+
+#roadmap .opex-note span {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+#roadmap .opex-note p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #526B80;
+}
+
+#roadmap .opex-note strong {
+    font-size: 17px;
+    color: #10273A;
+}
+
+/* INVESTMENT PRIORITY */
+
+#roadmap .priority-heading > span {
+    font-size: 14px;
+    letter-spacing: 1.8px;
+}
+
+#roadmap .priority-heading h3 {
+    font-size: 29px;
+    line-height: 1.4;
+}
+
+#roadmap .priority-item {
+    padding: 20px 0;
+    gap: 18px;
+}
+
+#roadmap .priority-item span {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#roadmap .priority-item p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* DEVELOPMENT TIMELINE */
+
+#roadmap .roadmap-card {
+    padding: 30px;
+}
+
+#roadmap .roadmap-period {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+#roadmap .roadmap-card h3 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 18px 0 12px;
+}
+
+#roadmap .roadmap-focus {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+#roadmap .roadmap-card ul {
+    padding-left: 20px;
+}
+
+#roadmap .roadmap-card li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 13px;
+}
+
+/* FINANCIAL FEASIBILITY */
+
+#roadmap .financial-note {
+    padding: 35px;
+    gap: 35px;
+}
+
+#roadmap .financial-note span {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+#roadmap .financial-note h3 {
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+#roadmap .financial-note p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+/* FOOTNOTE */
+
+#roadmap .roadmap-note {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    #roadmap .roadmap-header h2 {
+        font-size: 40px;
+    }
+
+    #roadmap .investment-summary-item h3 {
+        font-size: 27px;
+    }
+
+    #roadmap .investment-row {
+        padding: 15px 12px;
+        gap: 10px;
+    }
+
+    #roadmap .investment-row p,
+    #roadmap .investment-row strong {
+        font-size: 14px;
+    }
+
+    #roadmap .roadmap-card h3 {
+        font-size: 27px;
+    }
+
+    #roadmap .financial-note {
+        padding: 25px;
+    }
 }
